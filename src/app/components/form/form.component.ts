@@ -9,13 +9,12 @@ import { ButtonComponent } from '../button/button.component';
   styleUrl: './form.component.css'
 })
 export class FormComponent {
-  @Input() fields: { id: string; label: string; placeholder: string, value: string, type: string }[] = [];
-  @Output() formSubmit = new EventEmitter<any>();
+  @Input() fields: { id: string; label: string; placeholder: string, type: string, value?: string }[] = [];
+  @Output() onFormSubmit = new EventEmitter<any>();
 
 
   entradaDados(field: { id: string; label: string; placeholder: string, value: string }){
-    console.log(field)
-    //this.fields.find(f => f.id === field.id)!.value = field.value;
+    this.fields.find(f => f.id === field.id)!.value = field.value;
   }
 
   submit(){
@@ -24,6 +23,6 @@ export class FormComponent {
       return acc;
     }, {});
 
-    this.formSubmit.emit(data);
+    this.onFormSubmit.emit(data);
   }
 }

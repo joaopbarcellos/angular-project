@@ -12,13 +12,13 @@ import { LoginService } from '../../services/login.service';
 })
 export class LoginComponent {
   formFields = [
-    { id: 'login', label: 'Login', placeholder: "Digite seu login", value: undefined, type: 'text' },
-    { id: 'password', label: 'Senha', placeholder: "Digite sua senha", value: undefined, type: 'password' }
+    { id: 'login', label: 'Login', placeholder: "Digite seu login", type: 'text' },
+    { id: 'password', label: 'Senha', placeholder: "Digite sua senha", type: 'password' }
   ] 
 
   constructor(private loginService: LoginService, private router: Router) {}
 
-  onFormSubmit(formData: any) {
+  onClick(formData: any) {
     this.loginService.login(formData).subscribe({
       next: data => this.router.navigate(['/list']),
       error: error => console.error('Erro ao logar usuário', error)

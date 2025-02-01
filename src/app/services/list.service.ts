@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UserListType } from '../types/response-type';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,11 @@ export class ListService {
   constructor(private http: HttpClient) { }
 
   list() {
-    const token = localStorage.getItem('bearerToken');
+    const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`
     });
 
-    return this.http.get<ResponseType[]>(this.url, { headers });
+    return this.http.get<UserListType[]>(this.url, { headers });
   }
 }

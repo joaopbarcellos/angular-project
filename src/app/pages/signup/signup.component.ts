@@ -14,9 +14,9 @@ import { SignupService } from '../../services/signup.service';
 export class SignupComponent {
 
   formFields = [
-    { id: 'name', label: 'Nome', placeholder: "Digite seu nome", value: undefined, type: 'text' },
-    { id: 'login', label: 'Login', placeholder: "Digite seu login", value: undefined, type: 'text' },
-    { id: 'password', label: 'Senha', placeholder: "Digite sua senha", value: undefined, type: 'password' }
+    { id: 'name', label: 'Nome', placeholder: "Digite seu nome", type: 'text' },
+    { id: 'login', label: 'Login', placeholder: "Digite seu login",  type: 'text' },
+    { id: 'password', label: 'Senha', placeholder: "Digite sua senha", type: 'password' }
   ]
   
   constructor(private signupService: SignupService, private router: Router) { }
@@ -24,7 +24,9 @@ export class SignupComponent {
   onFormSubmit(formData: any) {
     this.signupService.cadastrar(formData).subscribe({
       next: data => this.router.navigate(['/login']),
-      error: error => console.error('Erro ao cadastrar usuário', error)
+      error: (data) => {
+        if (data.status == 200) this.router.navigate(['/login']);
+      }
     });
   }
 }

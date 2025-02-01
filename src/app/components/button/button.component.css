@@ -1,14 +1,22 @@
 .botao {
-    padding: 10px 20px;
-    background-color: #007bff;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 10px rgba(255, 117, 140, 0.3);
 }
 
 .botao:hover {
-    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 117, 140, 0.5);
+}
+
+.botao:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(255, 117, 140, 0.3);
 }

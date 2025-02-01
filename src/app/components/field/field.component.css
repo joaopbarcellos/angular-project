@@ -1,34 +1,25 @@
 .form-group {
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 5px;
     font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
 }
 
 .form-control {
-    width: 90%;
-    padding: 12px 20px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    border: 2px solid #ff758c;
     border-radius: 5px;
     font-size: 16px;
-    color: #333;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
 .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    outline: none;
+    border-color: #ff7eb3;
+    box-shadow: 0 0 5px rgba(255, 117, 140, 0.5);
 }
-
-.form-control::placeholder {
-    color: #999;
-    font-style: italic;
-}
-  

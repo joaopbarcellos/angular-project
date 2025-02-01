@@ -11,7 +11,7 @@ export class FieldComponent {
   @Input("id") id!: string;
   @Input("placeholder") placeholder!: string;
   @Input("label") label!: string;
-  @Input("value") value!: string;
+  @Input("value") value?: string;
   @Input("type") type!: string;
 
   @Output() newInput = new EventEmitter<any>();

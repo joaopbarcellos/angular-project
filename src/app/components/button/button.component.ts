@@ -8,9 +8,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ButtonComponent {
   @Input("message") message!: string;
-  @Output() click = new EventEmitter<any>();
+  @Output() submit = new EventEmitter<any>();
 
-  submit() {
-    this.click.emit();
+  onSubmit() {
+    this.submit.emit();
   }
 }
