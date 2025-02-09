@@ -4,7 +4,8 @@ import { Component, Input } from '@angular/core';
   selector: 'app-table',
   imports: [],
   templateUrl: './table.component.html',
-  styleUrl: './table.component.css'
+  styleUrl: './table.component.css',
+  standalone: true
 })
 export class TableComponent {
   @Input() headers: string[] = [];
